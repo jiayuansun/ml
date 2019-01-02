@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.model_selection import cross_validate,train_test_split
-from sklearn import preprocessing,neighbors
+from sklearn import preprocessing,neighbors,svm
 import pandas as pd
 #import pickle
 
@@ -14,7 +14,7 @@ y=np.array(df['class']) #label
 
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2)
 
-clf=neighbors.KNeighborsClassifier(n_jobs=1)
+clf=svm.SVC()
 clf.fit(X_train,y_train)
 
 # with open('kmeans_breast.pickle','wb') as f:
